@@ -10,6 +10,7 @@ class BooksCollector:
     def add_new_book(self, name):
         if not self.books_genre.get(name) and 0 < len(name) < 41:
             self.books_genre[name] = ''
+            print('Список', self.books_genre)
 
     # устанавливаем книге жанр
     def set_book_genre(self, name, genre):
