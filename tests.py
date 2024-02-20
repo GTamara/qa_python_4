@@ -89,7 +89,7 @@ class TestBooksCollector:
         """
         collector = BooksCollector()
         collector.add_new_book(name)
-        assert collector.books_genre.get(name) is not None
+        assert collector.books_genre.get(name) is not None and len(collector.books_genre) == 1
 
     def test_add_new_book_new_book_not_have_genre(self):
         """
@@ -273,7 +273,7 @@ class TestBooksCollector:
 
     def test_get_list_of_favorites_books_have_favorite_books_returns_favorites_list(self):
         """
-            Если список избранных книг непустой, то функция возвращает пустой список
+            Если в список избранных книг добавлена книга, то в возвращенном списке есть эта книга
         """
         collector = BooksCollector()
         book_name = 'Test book title 1'
